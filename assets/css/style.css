@@ -19,6 +19,12 @@
   scroll-behavior: smooth;
 }
 
+html,
+body {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
 body {
   background-color: var(--bg-light);
   color: var(--text-dark);
@@ -29,9 +35,11 @@ body {
 header {
   background-color: var(--white);
   box-shadow: var(--shadow);
-  position: sticky;
+  position: fixed;
   top: 0;
   z-index: 1000;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 #emptyCartText {
@@ -155,6 +163,7 @@ header {
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
   text-align: center;
+  overflow-x: hidden;
 }
 
 .info-item i {
@@ -344,6 +353,7 @@ header {
 .contact-section {
   background-color: var(--white);
   padding: 4rem 2rem;
+  overflow-x: hidden;
 }
 
 .contact-grid {
@@ -406,6 +416,7 @@ footer {
   text-align: center;
   padding: 2rem;
   font-size: 0.9rem;
+  overflow: hidden;
 }
 
 /* Responsive Design */

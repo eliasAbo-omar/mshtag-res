@@ -18,14 +18,18 @@
     />
 
     <!-- favicon -->
-    <link rel="shortcut icon" href="./favicon-96x96.png" type="image/x-icon" />
+    <link
+      rel="shortcut icon"
+      href="assets/image/favicon-96x96.png"
+      type="image/x-icon"
+    />
 
     <!-- =========== Custom CSS =========== -->
-    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
     <!-- Наvigation -->
-    <header>
+    <header class="header">
       <div class="nav-container">
         <a href="#" class="logo">
           <i class="fa-solid to fa-utensils"></i> بوفيه مشتاق
@@ -196,7 +200,6 @@
         </div>
         <!-- Google Maps Static/Dynamic View Simulation -->
         <div class="map-container">
-          <!-- تم استخدام موقع خطوط الطول والعرض التقريبية للبوفيه لإظهار الخريطة تفاعلياً -->
           <iframe
             src="https://maps.google.com/maps?q=24.5675276,46.8013451&z=15&output=embed"
           ></iframe>
@@ -237,7 +240,8 @@
     </footer>
 
     <!-- JavaScript Logic -->
-    <script src="./assets/js/sw.js"></script>
-    <script src="./assets/js/main.js"></script>
+    <script src="assets/js/scrollreveal.min.js"></script>
+    <script src="assets/js/sw.js"></script>
+    <script type="module" src="assets/js/main.js"></script>
   </body>
 </html>

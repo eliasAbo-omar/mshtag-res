@@ -11,15 +11,19 @@ const cartCount = document.getElementById("cartCount");
 cartBtn.addEventListener("click", () => cartDrawer.classList.add("open"));
 closeCart.addEventListener("click", () => cartDrawer.classList.remove("open"));
 
-function addToCart(name, price) {
+export function addToCart(name, price) {
   cart.push({ name, price });
   updateCartUI();
 }
 
-function removeFromCart(index) {
+window.addToCart = addToCart;
+
+export function removeFromCart(index) {
   cart.splice(index, 1);
   updateCartUI();
 }
+
+window.removeFromCart = removeFromCart;
 
 function updateCartUI() {
   cartCount.innerText = cart.length;
@@ -60,7 +64,7 @@ function updateCartUI() {
   totalPriceAmount.innerText = `${total} ريال`;
 }
 
-function checkout() {
+export function checkout() {
   updateCartUI();
 
   if (cart.length === 0) {
@@ -73,7 +77,6 @@ function checkout() {
     return;
   }
 
-  // صياغة رسالة واتساب بالطلبات لتسهيل تجربة العميل
   let message = "مرحباً بوفيه مشتاق، أرغب في طلب ما يلي:\n";
   cart.forEach((item) => {
     message += `- ${item.name} (${item.price} ريال)\n`;
@@ -81,6 +84,35 @@ function checkout() {
   message += `\n*المجموع الكلي: ${totalPriceAmount.innerText}*`;
 
   const encodedMessage = encodeURIComponent(message);
-  // توجيه لرقم المطعم مباشرة
+
   window.open(`https://wa.me/966539919613?text=${encodedMessage}`, "_blank");
 }
+
+window.checkout = checkout;
+
+const sr = ScrollReveal({
+  origin: "top",
+  distance: "60px",
+  duration: 2500,
+  delay: 300,
+  reset: true,
+});
+
+sr.reveal(`.header`, { delay: 200, origin: `right`, reset: false });
+sr.reveal(`.hero h1`, { delay: 200, origin: `top` });
+sr.reveal(`.hero p`, { delay: 200, origin: `top` });
+sr.reveal(`.hero a`, { delay: 200, origin: `top` });
+sr.reveal(`.info-strip`, { delay: 200, origin: `left` });
+sr.reveal(`.menu-section .section-title`, {
+  delay: 300,
+  origin: `top`,
+  reset: false,
+});
+sr.reveal(`.menu-section .menu-card`, {
+  delay: 300,
+  origin: `bottom`,
+  reset: false,
+});
+sr.reveal(`.contact-section .contact-info`, { delay: 200, origin: `right` });
+sr.reveal(`.contact-section .map-container`, { delay: 200, origin: `left` });
+sr.reveal(`footer p`, { delay: 500, origin: `bottom` });
