@@ -85,7 +85,7 @@ export function checkout() {
 
   const encodedMessage = encodeURIComponent(message);
 
-  window.open(`https://wa.me/966539919613?text=${encodedMessage}`, "_blank");
+  window.open(`https://wa.me/966538181612?text=${encodedMessage}`, "_blank");
 }
 
 window.checkout = checkout;
