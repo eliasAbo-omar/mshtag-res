@@ -7,6 +7,8 @@ const emptyCartText = document.getElementById("emptyCartText");
 const totalPriceAmount = document.getElementById("totalPriceAmount");
 const cartCount = document.getElementById("cartCount");
 
+console.log("جاري جلب ملف اللغات...");
+
 // Toggle Drawer
 cartBtn.addEventListener("click", () => cartDrawer.classList.add("open"));
 closeCart.addEventListener("click", () => cartDrawer.classList.remove("open"));
